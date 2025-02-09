@@ -4,38 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Pricing Calculator</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../src/styles.css">
 </head>
 <body>
     <header>
-        <img src="../assets/officeworks-logo.png" alt="Officeworks Logo">
-        <img src="../assets/geeks2u-logo.png" alt="Geeks2U Logo">
-    </header>
-
-    <div class="container">
+        <img src="../assets/officeworks-logo.png" alt="Officeworks Logo" class="logo">
         <h1>Job Pricing Calculator</h1>
-
+    </header>
+    
+    <form id="quote-form">
         <label for="email">Enter Email (optional):</label>
         <input type="email" id="email" placeholder="customer@example.com">
-
+        
         <h2>Select Products</h2>
-        <form id="quoteForm">
-            <div id="product-list"></div>
+        <div id="product-list"></div>
 
-            <h2>Additional Requests</h2>
-            <textarea id="special-requests" placeholder="Describe any special order items..."></textarea>
-            
-            <button type="button" id="calculate-quote">Calculate Quote</button>
-        </form>
+        <h2>Additional Requests</h2>
+        <textarea id="special-requests" placeholder="Describe any special order items..."></textarea>
+        <button type="button" id="calculate-quote">Calculate Quote</button>
 
         <h2>Total Price: <span id="total-price">$0.00</span></h2>
 
         <h2>Enhance Your Experience</h2>
-        <button id="smartAssist19">Add SmartAssist - $19.99/mo</button>
-        <button id="smartAssist29">Add SmartAssist+ - $29.99/mo</button>
-        <button id="specialRequest">Special Request</button>
-        <button id="confirmOrder">Confirm Order</button>
-    </div>
+        <button type="button" id="add-smartassist">$19.99/mo SmartAssist</button>
+        <button type="button" id="add-smartassist-plus">$29.99/mo SmartAssist+</button>
+        <button type="button" id="special-request">Special Request</button>
+        <button type="submit" id="confirm-order">Confirm Order</button>
+    </form>
 
     <script src="../src/main.js"></script>
 </body>
