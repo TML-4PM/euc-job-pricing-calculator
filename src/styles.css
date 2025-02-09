@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.logo {
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    color: #0046be;
+}
+
+button {
+    background-color: #0046be;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0033a0;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+}
