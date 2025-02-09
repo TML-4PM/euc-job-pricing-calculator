@@ -1,27 +1,5 @@
-{
-  "name": "euc-job-pricing-calculator",
-  "version": "1.0.0",
-  "description": "A pricing calculator for EUC job quotes, supporting PDF generation, CSV tracking, and scheduling.",
-  "main": "script.js",
-  "scripts": {
-    "start": "node server.js",
-    "dev": "vite dev",
-    "build": "vite build",
-    "deploy": "netlify deploy"
-  },
-  "dependencies": {
-    "express": "^4.18.2",
-    "csv-writer": "^1.6.0",
-    "pdfkit": "^0.13.0"
-  },
-  "devDependencies": {
-    "vite": "^4.5.0",
-    "nodemon": "^2.0.15"
-  },
-  "engines": {
-    "node": ">=16.0.0"
-  },
-  "keywords": ["EUC", "pricing", "calculator", "PDF", "CSV", "Netlify"],
-  "author": "Your Name",
-  "license": "MIT"
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "start": "node server.js"
 }
