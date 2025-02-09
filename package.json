@@ -1,18 +1,17 @@
 {
   "name": "euc-job-pricing-calculator",
   "version": "1.0.0",
-  "description": "A web application to calculate job pricing for End-User Computing (EUC) services.",
-  "main": "index.js",
+  "main": "src/app.js",
   "scripts": {
-    "start": "live-server",
-    "build": "echo 'No build step defined.'"
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
   },
-  "author": "Your Name",
-  "license": "ISC",
   "dependencies": {
-    "live-server": "^1.2.1"
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "serverless-http": "^3.0.0"
   },
-  "engines": {
-    "node": ">=14.0.0"
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
