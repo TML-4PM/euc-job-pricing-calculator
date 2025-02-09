@@ -5,3 +5,5 @@
   from = "/*"
   to = "/index.html"
   status = 200
+eval "$(ssh-agent -s)"
+echo "$GIT_SSH_KEY" | base64 --decode | ssh-add -
