@@ -4,33 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Pricing Calculator</title>
-    <link rel="stylesheet" href="../src/styles.css">
-    <script defer src="03_script.js"></script>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+
     <header>
-        <img src="../assets/officeworks-logo.png" alt="Officeworks Logo" class="logo">
-        <h1>Job Pricing Calculator</h1>
+        <img src="./assets/officeworks-logo.png" alt="Officeworks Logo" class="logo">
+        <img src="./assets/geeks2u-logo.png" alt="Geeks2U Logo" class="logo">
     </header>
-    
-    <section id="quote-form">
-        <label>Enter Email (optional): <input type="email" id="customer-email" placeholder="customer@example.com"></label>
-        
-        <h2>Select Products</h2>
-        <div id="product-list"></div>
 
-        <h2>Additional Requests</h2>
-        <textarea id="special-requests" placeholder="Describe any special order items..."></textarea>
+    <main>
+        <h1>Job Pricing Calculator</h1>
+        <form id="quote-form">
+            <label for="email">Enter Email:</label>
+            <input type="email" id="email" name="email" required>
 
-        <button id="calculate-quote">Calculate Quote</button>
-        
-        <h2>Total Price: <span id="total-price">$0.00</span></h2>
-        
-        <h2>Enhance Your Experience</h2>
-        <button class="add-ons">Add SmartAssist - $19.99/mo</button>
-        <button class="add-ons">Add SmartAssist+ - $29.99/mo</button>
-        <button class="add-ons">Special Request</button>
-        <button id="confirm-order">Confirm Order</button>
-    </section>
+            <h2>Select Products</h2>
+            <div id="product-list"></div>
+
+            <h2>Additional Services</h2>
+            <button type="button" id="add-smartassist">$19.99 SmartAssist</button>
+            <button type="button" id="add-smartassist-plus">$29.99 SmartAssist+</button>
+            <button type="button" id="special-request">Special Request</button>
+
+            <h2>Schedule Job</h2>
+            <label for="schedule-date">Select a Date:</label>
+            <input type="date" id="schedule-date">
+
+            <button type="submit">Generate Quote</button>
+        </form>
+
+        <div id="quote-output"></div>
+    </main>
+
+    <script src="./main.js"></script>
 </body>
 </html>
