@@ -1,29 +1,40 @@
-document.addEventListener("DOMContentLoaded", async function () {
-    const productList = document.getElementById("product-list");
-    const calculateButton = document.getElementById("calculateQuote");
-    const quoteResult = document.getElementById("quoteResult");
-    
-    // Load products from JSON
-    let products = await fetch('/data/products.json').then(res => res.json());
-    products.forEach(product => {
-        let div = document.createElement("div");
-        div.innerHTML = `<label>${product.name} - $${product.price}</label>
-                         <input type="number" id="qty-${product.id}" min="0" value="0">`;
-        productList.appendChild(div);
-    });
+document.addEventListener("DOMContentLoaded", () => {
+    fetch("../data/products.json")
+        .then(response => response.json())
+        .then(products => {
+            const productList = document.getElementById("product-list");
+            let category = "";
 
-    // Calculate Quote
-    calculateButton.addEventListener("click", () => {
-        let total = 0;
-        products.forEach(product => {
-            let quantity = parseInt(document.getElementById(`qty-${product.id}`).value);
-            total += product.price * quantity;
+            products.forEach(product => {
+                if (category !== product.category) {
+                    category = product.category;
+                    productList.innerHTML += `<h3>Category: ${category}</h3>`;
+                }
+                productList.innerHTML += `
+                    <label>${product.name} ($${product.price}): 
+                        <input type="number" min="0" id="${product.sku}" value="0">
+                    </label>
+                    <br>
+                `;
+            });
         });
-        quoteResult.innerHTML = `Total Quote: $${total.toFixed(2)}`;
-    });
 
-    // Confirm Order
-    document.getElementById("confirmOrder").addEventListener("click", () => {
-        alert("Order Confirmed! A copy of your quote will be sent via email.");
+    document.getElementById("calculate-quote").addEventListener("click", () => {
+        let total = 0;
+        let specialOrders = document.getElementById("special-requests").value.trim();
+        document.querySelectorAll("#product-list input").forEach(input => {
+            let quantity = parseInt(input.value);
+            if (quantity > 0) {
+                let price = parseFloat(input.parentElement.innerText.match(/\$(\d+\.\d+)/)[1]);
+                total += quantity * price;
+            }
+        });
+
+        let output = `Total Price: $${total.toFixed(2)}`;
+        if (specialOrders.length > 0) {
+            output += "\n\nSpecial Order Items:\n" + specialOrders + " - POA";
+        }
+
+        document.getElementById("total-price").innerText = output;
     });
 });
