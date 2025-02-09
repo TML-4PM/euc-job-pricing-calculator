@@ -1,56 +1,15 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const display = document.getElementById('display');
-    const buttons = document.querySelectorAll('.btn');
-    const clearButton = document.getElementById('clear');
-    const equalsButton = document.getElementById('equals');
+document.getElementById('calculate').addEventListener('click', async () => {
+    const jobCost = document.getElementById('jobCost').value;
+    if (!jobCost) {
+        document.getElementById('result').textContent = 'Please enter a valid job cost.';
+        return;
+    }
 
-    let currentInput = '';
-    let operator = '';
-    let firstOperand = null;
-
-    buttons.forEach(button => {
-        button.addEventListener('click', function () {
-            const value = this.getAttribute('data-value');
-
-            if (['+', '-', '*', '/'].includes(value)) {
-                if (firstOperand === null) {
-                    firstOperand = parseFloat(currentInput);
-                } else if (operator) {
-                    firstOperand = calculate(firstOperand, parseFloat(currentInput), operator);
-                }
-                operator = value;
-                currentInput = '';
-            } else {
-                currentInput += value;
-            }
-            display.textContent = currentInput || firstOperand;
-        });
-    });
-
-    clearButton.addEventListener('click', function () {
-        currentInput = '';
-        operator = '';
-        firstOperand = null;
-        display.textContent = '0';
-    });
-
-    equalsButton.addEventListener('click', function () {
-        if (operator && currentInput) {
-            const result = calculate(firstOperand, parseFloat(currentInput), operator);
-            display.textContent = result;
-            currentInput = '';
-            operator = '';
-            firstOperand = null;
-        }
-    });
-
-    function calculate(a, b, op) {
-        switch (op) {
-            case '+': return a + b;
-            case '-': return a - b;
-            case '*': return a * b;
-            case '/': return a / b;
-            default: return b;
-        }
+    try {
+        const response = await fetch('/api/price?cost=' + jobCost);
+        const data = await response.json();
+        document.getElementById('result').textContent = `Final Price: $${data.price}`;
+    } catch (error) {
+        document.getElementById('result').textContent = 'Error calculating price.';
     }
 });
