@@ -2,7 +2,7 @@
   "name": "euc-job-pricing-calculator",
   "version": "1.0.0",
   "description": "A web application to calculate job pricing for End-User Computing (EUC) services.",
-  "main": "index.html",
+  "main": "index.js",
   "scripts": {
     "start": "live-server",
     "build": "echo 'No build step defined.'"
