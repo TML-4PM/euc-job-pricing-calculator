@@ -1,0 +1,182 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  background: #007acc;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .logo {
+  width: 120px;
+  height: auto;
+}
+
+header h1 {
+  font-size: 28px;
+  text-align: center;
+  flex: 1;
+}
+
+/* Sections */
+section {
+  margin: 20px 0;
+}
+
+section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Labels and Inputs */
+label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+input[type="text"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Buttons */
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background: #007acc;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: #005f99;
+}
+
+/* Product Categories */
+.category {
+  margin-bottom: 20px;
+}
+
+.category h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.product label {
+  flex: 1;
+}
+
+.product input {
+  width: 60px;
+}
+
+/* Error Message */
+.error-message {
+  background: #ff4d4d;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  margin: 10px auto;
+  width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Quote Summary Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background: #f4f4f9;
+}
+
+/* Total Display */
+.total-display {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.large-price {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Barcode and QR Code */
+.barcode-qr {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#barcode {
+  margin-right: 20px;
+}
+
+/* Schedule Button */
+#schedule-btn {
+  background: #28a745;
+  margin-top: 20px;
+}
+
+#schedule-btn:hover {
+  background: #218838;
+}
