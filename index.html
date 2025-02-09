@@ -3,36 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EUC Job Pricing Calculator</title>
+    <title>Quote Calculator - Officeworks & Geeks2U</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>EUC Job Pricing Calculator</h1>
+        <img src="officeworks-logo.png" alt="Officeworks Logo" class="logo">
+        <img src="geeks2u-logo.png" alt="Geeks2U Logo" class="logo">
     </header>
+    
     <main>
+        <h1>Job Pricing Calculator</h1>
         <form id="quoteForm">
-            <label for="email">Email Address:</label>
-            <input type="email" id="email" required>
+            <label for="email">Enter Email (optional):</label>
+            <input type="email" id="email" name="email" placeholder="customer@example.com">
+            
+            <h2>Select Products</h2>
+            <div id="product-list"></div>
 
-            <h2>Select Products:</h2>
-            <div id="productList"></div>
+            <h2>Additional Requests</h2>
+            <textarea id="custom-requests" placeholder="Describe any special order items..."></textarea>
 
-            <h2>SmartAssist Upsell</h2>
-            <label>
-                <input type="checkbox" id="smartAssist19" value="19.99"> SmartAssist - $19.99/month
-            </label>
-            <label>
-                <input type="checkbox" id="smartAssist29" value="29.99"> SmartAssist - $29.99/month
-            </label>
-
-            <h2>Custom Request</h2>
-            <textarea id="customRequest" placeholder="Enter custom requests here..."></textarea>
-
-            <button type="submit">Generate Quote</button>
+            <button type="button" id="calculateQuote">Calculate Quote</button>
         </form>
-        <p id="quoteResult"></p>
+
+        <div id="quoteResult"></div>
+
+        <div id="offers">
+            <h3>Enhance Your Experience</h3>
+            <button class="offer-button" data-price="19.99">Add SmartAssist - $19.99/mo</button>
+            <button class="offer-button" data-price="29.99">Add SmartAssist+ - $29.99/mo</button>
+            <button class="special-request">Special Request</button>
+        </div>
+
+        <button id="confirmOrder">Confirm Order</button>
     </main>
-    <script src="script.js"></script>
+
+    <script src="/src/main.js"></script>
 </body>
 </html>
