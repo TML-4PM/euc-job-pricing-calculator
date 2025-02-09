@@ -1,18 +1,31 @@
-/project-root
-│── /public
-│    ├── index.html
-│    ├── styles.css
-│    ├── officeworks-logo.png
-│    ├── geeks2u-logo.png
-│── /src
-│    ├── main.js
-│    ├── calculator.js
-│    ├── email-handler.js
-│    ├── pdf-generator.js
-│── /data
-│    ├── products.json
-│    ├── sample-calendar.json
-│── /dist (This will be created when you run 'npm run build')
-│── package.json
-│── netlify.toml
-│── README.md
+📂 project-root/
+ ├── 📂 assets/  
+ │    ├── geeks2u-logo.png  
+ │    ├── officeworks-logo.png  
+ │    ├── rowboat.gif  
+ │  
+ ├── 📂 data/  
+ │    ├── 04_productList.json  
+ │    ├── sample-calendar.json  
+ │  
+ ├── 📂 functions/  
+ │    ├── api.js  
+ │  
+ ├── 📂 public/  
+ │    ├── 03_script.js  
+ │    ├── index.html  
+ │    ├── main.js  
+ │  
+ ├── 📂 src/  
+ │    ├── 📂 controllers/  
+ │    ├── 📂 models/  
+ │    ├── 📂 routes/  
+ │    ├── app.js  
+ │    ├── main.js  
+ │    ├── styles.css  
+ │  
+ ├── 05_netlify.toml  
+ ├── Final Project Structure  
+ ├── LICENSE  
+ ├── README.md  
+ ├── package.json  
