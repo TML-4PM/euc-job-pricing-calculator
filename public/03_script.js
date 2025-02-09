@@ -1,51 +1,39 @@
-document.addEventListener("DOMContentLoaded", async () => {
-    const productList = document.getElementById("productList");
-
-    // Pre-fill email if available
-    const params = new URLSearchParams(window.location.search);
-    const email = params.get("email");
-    if (email) document.getElementById("email").value = email;
-
-    try {
-        const response = await fetch('/data/productList.json');
-        const products = await response.json();
-
-        products.forEach(product => {
-            const div = document.createElement("div");
-            div.innerHTML = `
-                <label>
-                    <input type="checkbox" class="product-checkbox" data-price="${product.price}" data-name="${product.name}">
-                    ${product.name} - $${product.price}
-                </label>
-                <input type="number" class="product-quantity" min="1" value="1">
-            `;
-            productList.appendChild(div);
-        });
-    } catch (error) {
-        productList.innerHTML = "<p>Error loading products.</p>";
-    }
+document.addEventListener("DOMContentLoaded", () => {
+    fetch("../data/04_productList.json")
+        .then(response => response.json())
+        .then(data => populateProducts(data.products))
+        .catch(error => console.error("Error loading product list:", error));
+    
+    document.getElementById("calculate-quote").addEventListener("click", calculateTotal);
 });
 
-document.getElementById("quoteForm").addEventListener("submit", async (event) => {
-    event.preventDefault();
+function populateProducts(products) {
+    const productContainer = document.getElementById("product-list");
     
-    let total = 0;
-    const selectedProducts = [];
-    document.querySelectorAll(".product-checkbox:checked").forEach((checkbox, index) => {
-        const price = parseFloat(checkbox.dataset.price);
-        const name = checkbox.dataset.name;
-        const quantity = document.querySelectorAll(".product-quantity")[index].value;
+    products.forEach(category => {
+        let categoryHeader = document.createElement("h3");
+        categoryHeader.innerText = category.category;
+        productContainer.appendChild(categoryHeader);
 
-        total += price * quantity;
-        selectedProducts.push({ name, quantity, price });
+        category.items.forEach(product => {
+            let productEntry = document.createElement("div");
+            productEntry.innerHTML = `
+                <label>${product.name} ($${product.price}):</label>
+                <input type="number" id="${product.sku}" min="0" value="0">
+            `;
+            productContainer.appendChild(productEntry);
+        });
+    });
+}
+
+function calculateTotal() {
+    let total = 0;
+    
+    document.querySelectorAll("#product-list input").forEach(input => {
+        let quantity = parseInt(input.value);
+        let price = parseFloat(input.getAttribute("data-price"));
+        total += quantity * price;
     });
 
-    // SmartAssist Add-ons
-    if (document.getElementById("smartAssist19").checked) total += 19.99;
-    if (document.getElementById("smartAssist29").checked) total += 29.99;
-
-    // Display the quote
-    document.getElementById("quoteResult").textContent = `Total Quote: $${total.toFixed(2)}`;
-
-    // TODO: Send data to backend for PDF generation and tracking
-});
+    document.getElementById("total-price").innerText = `$${total.toFixed(2)}`;
+}
