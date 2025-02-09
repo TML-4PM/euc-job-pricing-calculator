@@ -1,20 +1,55 @@
-document.getElementById('calculate').addEventListener('click', function() {
-    let totalPrice = 0;
+document.addEventListener("DOMContentLoaded", () => {
+    loadProducts();
+    setupFormHandlers();
+});
 
-    // Get product prices (example prices)
-    const prices = {
-        product1: 1999, // MacBook Pro
-        product2: 1299, // Dell XPS
-        product3: 49, // Wireless Mouse
-        product4: 79  // Keyboard
+function loadProducts() {
+    fetch('./data/04_productList.json')
+        .then(response => response.json())
+        .then(data => {
+            const productListDiv = document.getElementById('product-list');
+            data.products.forEach(product => {
+                const productItem = document.createElement('div');
+                productItem.innerHTML = `
+                    <label>
+                        <input type="checkbox" name="products" value="${product.sku}">
+                        ${product.name} - $${product.price}
+                    </label>
+                    <input type="number" name="quantity-${product.sku}" min="0" placeholder="Quantity">
+                `;
+                productListDiv.appendChild(productItem);
+            });
+        })
+        .catch(error => console.error('Error loading product list:', error));
+}
+
+function setupFormHandlers() {
+    document.getElementById("quote-form").addEventListener("submit", event => {
+        event.preventDefault();
+        generateQuote();
+    });
+}
+
+function generateQuote() {
+    const selectedProducts = [];
+    document.querySelectorAll('input[name="products"]:checked').forEach(checkbox => {
+        const quantityInput = document.querySelector(`input[name="quantity-${checkbox.value}"]`);
+        if (quantityInput && quantityInput.value > 0) {
+            selectedProducts.push({
+                sku: checkbox.value,
+                quantity: quantityInput.value
+            });
+        }
+    });
+
+    const email = document.getElementById("email").value;
+    const scheduleDate = document.getElementById("schedule-date").value;
+    
+    const quoteDetails = {
+        email,
+        scheduleDate,
+        products: selectedProducts
     };
 
-    // Calculate total based on user input
-    for (let id in prices) {
-        let quantity = document.getElementById(id).value;
-        totalPrice += quantity * prices[id];
-    }
-
-    // Update total price
-    document.getElementById('total-price').innerText = `Total Price: $${totalPrice.toFixed(2)}`;
-});
+    console.log("Generated Quote:", quoteDetails);
+}
