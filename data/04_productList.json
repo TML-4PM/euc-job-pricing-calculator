@@ -1,22 +1,28 @@
 {
-  "products": [
-    {
-      "category": "Laptops",
-      "items": [
-        { "name": "Lenovo IdeaPad Slim 3i Chromebook", "sku": "LAP-001", "price": 399 },
-        { "name": "Lenovo IdeaPad Duet 2-in-1 Chromebook", "sku": "LAP-002", "price": 499 },
-        { "name": "Lenovo IdeaPad Flex 5i 14\"", "sku": "LAP-003", "price": 799 },
-        { "name": "Acer 14\" Swift 1 Notebook", "sku": "LAP-004", "price": 699 },
-        { "name": "ASUS E410 Notebook", "sku": "LAP-005", "price": 649 }
-      ]
-    },
-    {
-      "category": "Keyboards",
-      "items": [
-        { "name": "Logitech K375s Multi-Device Keyboard", "sku": "KEY-001", "price": 69.95 },
-        { "name": "J.Burrows Bluetooth Keyboard Silver KB200", "sku": "KEY-002", "price": 49.95 },
-        { "name": "Logitech Wireless Keyboard K270", "sku": "KEY-003", "price": 59.95 }
-      ]
-    }
-  ]
+  "products": {
+    "Laptops": [
+      { "sku": "LAP-001", "name": "Lenovo IdeaPad Slim 3i Chromebook", "price": 399 },
+      { "sku": "LAP-002", "name": "Lenovo IdeaPad Duet 2-in-1 Chromebook", "price": 499 },
+      { "sku": "LAP-003", "name": "Lenovo IdeaPad Flex 5i 14", "price": 799 },
+      { "sku": "LAP-004", "name": "Acer 14\" Swift 1 Notebook", "price": 699 },
+      { "sku": "LAP-005", "name": "ASUS E410 Notebook", "price": 649 }
+    ],
+    "Keyboards": [
+      { "sku": "KEY-001", "name": "Logitech K375s Multi-Device Keyboard", "price": 69.95 },
+      { "sku": "KEY-002", "name": "J.Burrows Bluetooth Keyboard Silver KB200", "price": 49.95 },
+      { "sku": "KEY-003", "name": "Logitech Wireless Keyboard K270", "price": 59.95 }
+    ],
+    "Monitors": [
+      { "sku": "MON-001", "name": "HP 24\" FHD Monitor", "price": 249 },
+      { "sku": "MON-002", "name": "Dell 27\" UltraSharp Monitor", "price": 599 },
+      { "sku": "MON-003", "name": "Samsung 32\" Curved Monitor", "price": 399 },
+      { "sku": "MON-004", "name": "LG 29\" UltraWide Monitor", "price": 349 },
+      { "sku": "MON-005", "name": "Acer 23.8\" FHD Monitor", "price": 199 }
+    ],
+    "Headsets": [
+      { "sku": "HSET-001", "name": "Logitech H390 USB Headset", "price": 79.95 },
+      { "sku": "HSET-002", "name": "Jabra Evolve 20 SE UC Stereo Headset", "price": 99.95 },
+      { "sku": "HSET-003", "name": "Plantronics Blackwire 3220 USB-A Headset", "price": 89.95 }
+    ]
+  }
 }
