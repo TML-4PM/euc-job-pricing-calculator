@@ -1,28 +1,17 @@
 {
-  "name": "wasted-weekend",
+  "name": "job-pricing-calculator",
   "version": "1.0.0",
-  "description": "Job pricing calculator for Officeworks & Geeks2U",
+  "description": "A job pricing calculator for Officeworks & Geeks2U.",
   "scripts": {
-    "start": "node server.js",
-    "build": "mkdir -p dist && cp -r public/* dist/",
-    "deploy": "npm run build && netlify deploy --prod"
+    "start": "parcel public/index.html --port 3000",
+    "build": "parcel build public/index.html --dist-dir dist"
   },
   "dependencies": {
     "express": "^4.18.2",
-    "csv-parser": "^3.0.0",
-    "dotenv": "^16.0.3",
-    "nodemailer": "^6.9.1"
+    "nodemailer": "^6.9.1",
+    "csv-writer": "^1.6.0"
   },
   "devDependencies": {
-    "netlify-cli": "^15.5.0"
-  },
-  "engines": {
-    "node": ">=16"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/TML-4PM/wasted-weekend.git"
-  },
-  "license": "MIT",
-  "private": true
+    "parcel": "^2.8.3"
+  }
 }
