@@ -3,42 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quote Calculator - Officeworks & Geeks2U</title>
+    <title>Job Pricing Calculator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <img src="officeworks-logo.png" alt="Officeworks Logo" class="logo">
-        <img src="geeks2u-logo.png" alt="Geeks2U Logo" class="logo">
-    </header>
-    
-    <main>
+
+    <div class="container">
         <h1>Job Pricing Calculator</h1>
-        <form id="quoteForm">
-            <label for="email">Enter Email (optional):</label>
-            <input type="email" id="email" name="email" placeholder="customer@example.com">
-            
-            <h2>Select Products</h2>
-            <div id="product-list"></div>
 
-            <h2>Additional Requests</h2>
-            <textarea id="custom-requests" placeholder="Describe any special order items..."></textarea>
+        <!-- Email Input -->
+        <label for="email">Enter Email (optional):</label>
+        <input type="email" id="email" placeholder="customer@example.com">
 
-            <button type="button" id="calculateQuote">Calculate Quote</button>
-        </form>
-
-        <div id="quoteResult"></div>
-
-        <div id="offers">
-            <h3>Enhance Your Experience</h3>
-            <button class="offer-button" data-price="19.99">Add SmartAssist - $19.99/mo</button>
-            <button class="offer-button" data-price="29.99">Add SmartAssist+ - $29.99/mo</button>
-            <button class="special-request">Special Request</button>
+        <!-- Product Selection -->
+        <h2>Select Products</h2>
+        <div class="product-category">
+            <h3>Category: Laptops</h3>
+            <div class="product">
+                <label for="product1">MacBook Pro</label>
+                <input type="number" id="product1" min="0" value="0">
+            </div>
+            <div class="product">
+                <label for="product2">Dell XPS</label>
+                <input type="number" id="product2" min="0" value="0">
+            </div>
         </div>
 
-        <button id="confirmOrder">Confirm Order</button>
-    </main>
+        <div class="product-category">
+            <h3>Category: Accessories</h3>
+            <div class="product">
+                <label for="product3">Wireless Mouse</label>
+                <input type="number" id="product3" min="0" value="0">
+            </div>
+            <div class="product">
+                <label for="product4">Keyboard</label>
+                <input type="number" id="product4" min="0" value="0">
+            </div>
+        </div>
 
-    <script src="/src/main.js"></script>
+        <!-- Additional Requests -->
+        <h2>Additional Requests</h2>
+        <textarea id="special-requests" placeholder="Describe any special order items..."></textarea>
+
+        <!-- Calculate Quote Button -->
+        <button id="calculate">Calculate Quote</button>
+
+        <!-- Total Price Display -->
+        <div id="total-price">Total Price: $0.00</div>
+
+        <!-- Subscription Upsells -->
+        <h2>Enhance Your Experience</h2>
+        <button class="upsell">Add SmartAssist - $19.99/mo</button>
+        <button class="upsell">Add SmartAssist+ - $29.99/mo</button>
+        <button class="special-request">Special Request</button>
+
+        <!-- Confirm Order -->
+        <button class="confirm-order">Confirm Order</button>
+    </div>
+
+    <script src="main.js"></script>
 </body>
 </html>
