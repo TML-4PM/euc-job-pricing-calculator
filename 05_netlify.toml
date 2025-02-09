@@ -1,1 +1,2 @@
-rm netlify.toml
+[build]
+  command = "vite build"  # or "next build" or "react-scripts build"
