@@ -1,0 +1,14 @@
+{
+  "name": "euc-job-pricing-calculator",
+  "version": "1.0.0",
+  "description": "A web application to calculate job pricing for EUC services.",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server"
+  },
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  }
+}
