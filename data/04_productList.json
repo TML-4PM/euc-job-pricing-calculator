@@ -1,7 +1,172 @@
-[
-    {"category": "Laptops", "sku": "LAP-001", "name": "Lenovo IdeaPad Slim 3i Chromebook", "price": 399},
-    {"category": "Laptops", "sku": "LAP-002", "name": "Lenovo IdeaPad Duet 2-in-1 Chromebook", "price": 499},
-    {"category": "Laptops", "sku": "LAP-003", "name": "Lenovo IdeaPad Flex 5i 14\"", "price": 799},
-    {"category": "Accessories", "sku": "KEY-001", "name": "Logitech K375s Multi-Device Keyboard", "price": 69.95},
-    {"category": "Accessories", "sku": "MOU-001", "name": "Logitech M280 Wireless Mouse", "price": 39.95}
-]
+{
+  "products": [
+    {
+      "category": "Laptops",
+      "items": [
+        {
+          "name": "Lenovo IdeaPad Slim 3i Chromebook",
+          "sku": "LAP-001",
+          "price": 399,
+          "description": "A lightweight Chromebook with 4GB RAM and 64GB storage, ideal for everyday tasks."
+        },
+        {
+          "name": "Lenovo IdeaPad Duet 2-in-1 Chromebook",
+          "sku": "LAP-002",
+          "price": 499,
+          "description": "A versatile 2-in-1 device with a 10.1\" display, combining tablet and laptop functionalities."
+        },
+        {
+          "name": "Lenovo IdeaPad Flex 5i 14\"",
+          "sku": "LAP-003",
+          "price": 799,
+          "description": "A flexible laptop with a 14\" touchscreen, 8GB RAM, and 256GB SSD, suitable for multitasking."
+        },
+        {
+          "name": "Acer 14\" Swift 1 Notebook",
+          "sku": "LAP-004",
+          "price": 699,
+          "description": "A sleek notebook featuring a 14\" display, 4GB RAM, and 128GB storage for daily use."
+        },
+        {
+          "name": "ASUS E410 Notebook",
+          "sku": "LAP-005",
+          "price": 649,
+          "description": "A compact notebook with an innovative design, 8GB RAM, and 256GB storage."
+        }
+      ]
+    },
+    {
+      "category": "Keyboards",
+      "items": [
+        {
+          "name": "Logitech K375s Multi-Device Keyboard",
+          "sku": "KEY-001",
+          "price": 69.95,
+          "description": "A versatile keyboard that can switch between multiple devices seamlessly."
+        },
+        {
+          "name": "J.Burrows Bluetooth Keyboard Silver KB200",
+          "sku": "KEY-002",
+          "price": 49.95,
+          "description": "A sleek Bluetooth keyboard compatible with various devices."
+        },
+        {
+          "name": "Logitech Wireless Keyboard K270",
+          "sku": "KEY-003",
+          "price": 59.95,
+          "description": "A reliable wireless keyboard with a compact design."
+        }
+      ]
+    },
+    {
+      "category": "Monitors",
+      "items": [
+        {
+          "name": "HP 24\" FHD Monitor",
+          "sku": "MON-001",
+          "price": 249,
+          "description": "A 24-inch Full HD monitor offering clear visuals for work and entertainment."
+        },
+        {
+          "name": "Dell 27\" UltraSharp Monitor",
+          "sku": "MON-002",
+          "price": 599,
+          "description": "A 27-inch monitor with exceptional color accuracy and clarity."
+        },
+        {
+          "name": "Samsung 32\" Curved Monitor",
+          "sku": "MON-003",
+          "price": 399,
+          "description": "A 32-inch curved monitor providing an immersive viewing experience."
+        },
+        {
+          "name": "LG 29\" UltraWide Monitor",
+          "sku": "MON-004",
+          "price": 349,
+          "description": "A 29-inch ultrawide monitor ideal for multitasking and productivity."
+        },
+        {
+          "name": "Acer 23.8\" FHD Monitor",
+          "sku": "MON-005",
+          "price": 199,
+          "description": "A 23.8-inch Full HD monitor with vibrant colors and sharp details."
+        }
+      ]
+    },
+    {
+      "category": "Headsets",
+      "items": [
+        {
+          "name": "Logitech H390 USB Headset",
+          "sku": "HSET-001",
+          "price": 79.95,
+          "description": "A comfortable USB headset with noise-canceling microphone for clear audio."
+        },
+        {
+          "name": "Jabra Evolve 20 SE UC Stereo Headset",
+          "sku": "HSET-002",
+          "price": 99.95,
+          "description": "A professional headset designed for enhanced productivity and sound quality."
+        },
+        {
+          "name": "Plantronics Blackwire 3220 USB-A Headset",
+          "sku": "HSET-003",
+          "price": 89.95,
+          "description": "A durable and comfortable headset suitable for extended use."
+        }
+      ]
+    },
+    {
+      "category": "Mice",
+      "items": [
+        {
+          "name": "Logitech M280 Wireless Mouse",
+          "sku": "MOU-001",
+          "price": 39.95,
+          "description": "A comfortable wireless mouse with a contoured design."
+        },
+        {
+          "name": "J.Burrows Wireless Mouse Black",
+          "sku": "MOU-002",
+          "price": 29.95,
+          "description": "A sleek and affordable wireless mouse for everyday use."
+        },
+        {
+          "name": "Microsoft Bluetooth Mouse",
+          "sku": "MOU-003",
+          "price": 49.95,
+          "description": "A compact and portable mouse with Bluetooth connectivity."
+        }
+      ]
+    },
+    {
+      "category": "Other EUC Devices",
+      "items": [
+        {
+          "name": "HP LaserJet Pro MFP M428fdw Printer",
+          "sku": "PRT-001",
+          "price": 699,
+          "description": "A multifunction laser printer ideal for small to medium-sized businesses."
+        },
+        {
+          "name": "Canon PIXMA TS5360a All-in-One Home Printer",
+          "sku": "PRT-002",
+          "price": 149,
+          "description": "A compact all-in-one inkjet printer offering printing, copying, and scanning functionalities."
+        },
+        {
+          "name": "Brother DS-640 Portable Scanner",
+          "sku": "SCN-001",
+          "price": 179,
+          "description": "A lightweight, portable scanner ideal for mobile professionals."
+        },
+        {
+          "name": "Epson Perfection V39 Flatbed Scanner",
+          "sku": "SCN-002",
+          "price": 149,
+          "description": "A slim flatbed scanner perfect for high-resolution photo and document scanning."
+        }
+      ]
+    }
+  ]
+}
