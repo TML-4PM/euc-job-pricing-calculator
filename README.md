@@ -1,13 +1,14 @@
 # EUC Job Pricing Calculator
 
-A web application designed to assist in calculating job pricing for End-User Computing (EUC) services.
+This project calculates job pricing using Express.js and deploys via Netlify.
 
 ## Features
+- Dynamic pricing model
+- Serverless functions via Netlify
+- Responsive frontend
 
-- **Email Parsing:** Automatically extract and fill form details from pasted email content.
-- **Product Selection:** Choose from a predefined list of products categorized for convenience.
-- **Service Details:** Input customer information, preferred installation dates, urgency levels, and additional notes.
-- **Quote Calculation:** Generate a detailed quote summary with total billable hours and costs.
-- **Export Options:** Export quotes to CSV, print to PDF, and send via email
-::contentReference[oaicite:0]{index=0}
- 
+## Setup
+1. Clone the repository.
+2. Install dependencies: `npm install`
+3. Run locally: `npm start`
+4. Deploy via Netlify.
