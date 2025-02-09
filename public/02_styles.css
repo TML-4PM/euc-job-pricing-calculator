@@ -1,62 +1,111 @@
-/* Apply Officeworks branding */
+/* Officeworks Color Theme */
+:root {
+    --primary-blue: #0057A3;
+    --secondary-red: #D32F2F;
+    --light-gray: #F4F4F4;
+    --dark-gray: #333;
+}
+
+/* Apply global styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #F4F4F4;
-    color: #333;
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+    margin: 0;
+    padding: 20px;
     text-align: center;
 }
 
 /* Center everything */
 .container {
-    width: 50%;
+    width: 60%;
     margin: 0 auto;
-    background: #fff;
-    padding: 20px;
+    background: white;
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Styling for input fields */
+/* Headings */
+h1 {
+    color: var(--primary-blue);
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    border-bottom: 3px solid var(--primary-blue);
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+h3 {
+    color: var(--primary-blue);
+    font-size: 18px;
+}
+
+/* Form Inputs */
 input, textarea {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     margin: 10px 0;
     border: 1px solid #ddd;
     border-radius: 5px;
+    font-size: 16px;
 }
 
 /* Product categories */
 .product-category {
-    margin-bottom: 20px;
-    background: #ececec;
+    text-align: left;
+    background: #e3e3e3;
     padding: 15px;
     border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Product list */
+.product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0;
 }
 
 /* Buttons */
 button {
-    background: #0077C8; /* Officeworks blue */
+    background: var(--primary-blue);
     color: white;
     border: none;
-    padding: 10px 15px;
-    margin: 5px;
+    padding: 12px 20px;
+    margin: 10px;
     cursor: pointer;
     font-size: 16px;
     border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 button:hover {
-    background: #005fa3;
+    background: #004080;
 }
 
-/* Special request button */
+/* Upsell Buttons */
+.upsell {
+    background: #0077C8;
+}
+
 .special-request {
-    background: #D32F2F; /* Officeworks red */
+    background: var(--secondary-red);
+}
+
+.confirm-order {
+    background: green;
 }
 
 /* Price Display */
 #total-price {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: bold;
+    color: var(--primary-blue);
     margin-top: 20px;
 }
