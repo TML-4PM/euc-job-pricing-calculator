@@ -1,26 +1,8 @@
 [build]
   command = "npm run build"
-  publish = "dist"
-
-[dev]
-  framework = "none"
-  command = "npm start"
-  targetPort = 3000
-  publish = "dist"
-
-[functions]
-  directory = "functions"
-  node_bundler = "esbuild"
+  publish = "public"
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Content-Security-Policy = "default-src 'self'; img-src 'self' data:;"
-    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-    X-Frame-Options = "DENY"
-    X-Content-Type-Options = "nosniff"
