@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EUC Job Pricing Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>EUC Job Pricing Calculator</h1>
+    </header>
+    <main>
+        <form id="quoteForm">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" required>
+
+            <h2>Select Products:</h2>
+            <div id="productList"></div>
+
+            <h2>SmartAssist Upsell</h2>
+            <label>
+                <input type="checkbox" id="smartAssist19" value="19.99"> SmartAssist - $19.99/month
+            </label>
+            <label>
+                <input type="checkbox" id="smartAssist29" value="29.99"> SmartAssist - $29.99/month
+            </label>
+
+            <h2>Custom Request</h2>
+            <textarea id="customRequest" placeholder="Enter custom requests here..."></textarea>
+
+            <button type="submit">Generate Quote</button>
+        </form>
+        <p id="quoteResult"></p>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
