@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EUC Job Pricing Calculator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img class="logo" src="assets/officeworks-logo.png" alt="Officeworks Logo">
+      <h1>EUC Job Pricing Calculator</h1>
+      <img class="logo" src="assets/geeks2u-logo.png" alt="Geeks2u Logo">
+    </header>
+
+    <section id="email-section">
+      <h2>Email Input</h2>
+      <label for="email_input">Paste Email Request:</label>
+      <textarea id="email_input" rows="6" placeholder="Paste the email here..."></textarea>
+      <button onclick="parseEmailAndFillForm()">Auto-Fill Form</button>
+    </section>
+
+    <section id="products-section">
+      <h2>Select Products</h2>
+      <div id="product-categories"></div>
+    </section>
+
+    <section id="details-section">
+      <h2>Service Details</h2>
+      <label for="customer_name">Customer Name:</label>
+      <input type="text" id="customer_name" placeholder="Enter customer name">
+
+      <label for="company_name">Company Name:</label>
+      <input type="text" id="company_name" placeholder="Enter company name">
+
+      <label for="installation_date">Preferred Installation Date:</label>
+      <input type="date" id="installation_date">
+
+      <label for="urgency_level">Urgency Level:</label>
+      <select id="urgency_level">
+        <option value="Standard">Standard</option>
+        <option value="Urgent">Urgent</option>
+        <option value="Emergency">Emergency</option>
+      </select>
+
+      <label for="after_hours">After-Hours Service Required?</label>
+      <select id="after_hours">
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+      </select>
+
+      <label for="additional_notes">Additional Notes:</label>
+      <textarea id="additional_notes" rows="4" placeholder="Any extra notes..."></textarea>
+    </section>
+
+    <section id="actions-section">
+      <button class="calculate-btn" onclick="calculateAndDisplay(event)">Calculate Quote</button>
+      <button class="confirm-btn" onclick="confirmAppointment(event)">Confirm & Email Quote</button>
+      <button onclick="exportToCSV()">Export All Quotes (CSV)</button>
+      <button onclick="printToPDF()">Print Quote (PDF)</button>
+      <button onclick="sendEmailConfirmation()">Send Quote via Email</button>
+      <button class="videocon-btn" onclick="openVideoCon()">Videocon</button>
+    </section>
+
+    <section id="results" style="display: none;">
+      <h2>Quote Summary</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Unit Price</th>
+            <th>Line Total</th>
+          </tr>
+        </thead>
+        <tbody id="quote-table-body"></tbody>
+      </table>
+      <div id="special-orders"></div>
+      <p class="total-display"><strong>Total Billable Hours:</strong> <span id="total-hours">0</span> hours</p>
+      <p class="total-display large-price"><strong>Total Cost:</strong> <span id="total-cost">USD $0.00</span></p>
+      <div class="barcode-qr">
+        <canvas id="barcode"></canvas>
+        <div id="qrcode"></div>
+      </div>
+      <button id="schedule-btn" onclick="openCalendar()">Schedule Appointment</button>
+    </section>
+  </div>
+</body>
+</html>
