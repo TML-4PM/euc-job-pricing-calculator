@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Pricing Calculator</title>
     <link rel="stylesheet" href="../src/styles.css">
+    <script defer src="03_script.js"></script>
 </head>
 <body>
     <header>
@@ -12,26 +13,24 @@
         <h1>Job Pricing Calculator</h1>
     </header>
     
-    <form id="quote-form">
-        <label for="email">Enter Email (optional):</label>
-        <input type="email" id="email" placeholder="customer@example.com">
+    <section id="quote-form">
+        <label>Enter Email (optional): <input type="email" id="customer-email" placeholder="customer@example.com"></label>
         
         <h2>Select Products</h2>
         <div id="product-list"></div>
 
         <h2>Additional Requests</h2>
         <textarea id="special-requests" placeholder="Describe any special order items..."></textarea>
-        <button type="button" id="calculate-quote">Calculate Quote</button>
 
+        <button id="calculate-quote">Calculate Quote</button>
+        
         <h2>Total Price: <span id="total-price">$0.00</span></h2>
-
+        
         <h2>Enhance Your Experience</h2>
-        <button type="button" id="add-smartassist">$19.99/mo SmartAssist</button>
-        <button type="button" id="add-smartassist-plus">$29.99/mo SmartAssist+</button>
-        <button type="button" id="special-request">Special Request</button>
-        <button type="submit" id="confirm-order">Confirm Order</button>
-    </form>
-
-    <script src="../src/main.js"></script>
+        <button class="add-ons">Add SmartAssist - $19.99/mo</button>
+        <button class="add-ons">Add SmartAssist+ - $29.99/mo</button>
+        <button class="add-ons">Special Request</button>
+        <button id="confirm-order">Confirm Order</button>
+    </section>
 </body>
 </html>
