@@ -1,35 +1,30 @@
 body {
     font-family: Arial, sans-serif;
-    max-width: 800px;
-    margin: auto;
+    background-color: #f4f4f4;
     padding: 20px;
+    text-align: center;
 }
 
 .logo {
     width: 150px;
-    display: block;
-    margin: 0 auto;
 }
 
 h1, h2 {
-    color: #0046be;
+    color: #0055A5;
+}
+
+input, textarea, button {
+    margin: 10px;
+    padding: 8px;
 }
 
 button {
-    background-color: #0046be;
+    background-color: #0055A5;
     color: white;
-    padding: 10px;
-    margin: 5px;
     border: none;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #0033a0;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
+    background-color: #003D73;
 }
