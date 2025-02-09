@@ -12,6 +12,7 @@
 │── /data
 │    ├── products.json
 │    ├── sample-calendar.json
+│── /dist (This will be created when you run 'npm run build')
 │── package.json
 │── netlify.toml
 │── README.md
