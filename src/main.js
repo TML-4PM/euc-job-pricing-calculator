@@ -1,40 +1,39 @@
-document.addEventListener("DOMContentLoaded", () => {
-    fetch("../data/products.json")
+document.addEventListener("DOMContentLoaded", function() {
+    const productList = document.getElementById("product-list");
+    const totalPriceEl = document.getElementById("total-price");
+    
+    fetch("../data/productList.json")
         .then(response => response.json())
         .then(products => {
-            const productList = document.getElementById("product-list");
-            let category = "";
+            Object.keys(products).forEach(category => {
+                let categoryHeader = document.createElement("h3");
+                categoryHeader.textContent = category;
+                productList.appendChild(categoryHeader);
 
-            products.forEach(product => {
-                if (category !== product.category) {
-                    category = product.category;
-                    productList.innerHTML += `<h3>Category: ${category}</h3>`;
-                }
-                productList.innerHTML += `
-                    <label>${product.name} ($${product.price}): 
-                        <input type="number" min="0" id="${product.sku}" value="0">
-                    </label>
-                    <br>
-                `;
+                products[category].forEach(product => {
+                    let itemDiv = document.createElement("div");
+                    itemDiv.innerHTML = `
+                        <label>${product.name} - $${product.price}</label>
+                        <input type="number" id="${product.sku}" min="0" value="0">
+                    `;
+                    productList.appendChild(itemDiv);
+                });
             });
         });
 
-    document.getElementById("calculate-quote").addEventListener("click", () => {
-        let total = 0;
-        let specialOrders = document.getElementById("special-requests").value.trim();
+    document.getElementById("calculate-quote").addEventListener("click", function() {
+        let totalPrice = 0;
         document.querySelectorAll("#product-list input").forEach(input => {
             let quantity = parseInt(input.value);
-            if (quantity > 0) {
-                let price = parseFloat(input.parentElement.innerText.match(/\$(\d+\.\d+)/)[1]);
-                total += quantity * price;
-            }
+            let productPrice = parseFloat(input.previousElementSibling.textContent.split("$")[1]);
+            totalPrice += quantity * productPrice;
         });
+        totalPriceEl.textContent = `$${totalPrice.toFixed(2)}`;
+    });
 
-        let output = `Total Price: $${total.toFixed(2)}`;
-        if (specialOrders.length > 0) {
-            output += "\n\nSpecial Order Items:\n" + specialOrders + " - POA";
-        }
-
-        document.getElementById("total-price").innerText = output;
+    document.getElementById("confirm-order").addEventListener("click", function() {
+        fetch("../functions/api.js", { method: "POST" })
+            .then(response => response.json())
+            .then(data => alert("Quote sent successfully!"));
     });
 });
