@@ -1,24 +1,33 @@
-const nodemailer = require("nodemailer");
+const express = require('express');
+const nodemailer = require('nodemailer');
+const app = express();
 
-exports.handler = async function(event) {
-    const data = JSON.parse(event.body);
-    
-    let transporter = nodemailer.createTransport({
-        service: "gmail",
-        auth: { user: "your-email@gmail.com", pass: "yourpassword" }
+app.use(express.json());
+
+app.post('/send-quote', async (req, res) => {
+    const { email, products, scheduleDate } = req.body;
+
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'your-email@gmail.com',
+            pass: 'your-password'
+        }
     });
 
-    let mailOptions = {
-        from: "your-email@gmail.com",
-        to: "troy.latter@unisys.com",
-        subject: "New Job Quote",
-        text: `Quote Details:\n${JSON.stringify(data, null, 2)}`
+    const mailOptions = {
+        from: 'your-email@gmail.com',
+        to: 'troy.latter@unisys.com',
+        subject: 'New Quote Generated',
+        text: JSON.stringify(products)
     };
 
     try {
         await transporter.sendMail(mailOptions);
-        return { statusCode: 200, body: JSON.stringify({ success: true }) };
+        res.status(200).send('Email sent successfully');
     } catch (error) {
-        return { statusCode: 500, body: JSON.stringify({ error: error.message }) };
+        res.status(500).send('Error sending email');
     }
-};
+});
+
+module.exports = app;
