@@ -1,20 +1,9 @@
 {
-  "name": "wasted-weekend",
+  "name": "quote-calculator",
   "version": "1.0.0",
-  "private": true,
+  "description": "A pricing calculator for Officeworks & Geeks2U services",
   "scripts": {
-    "start": "node server.js",
-    "dev": "vite", 
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "echo 'No build needed, using static files.'"
   },
-  "dependencies": {
-    "express": "^4.18.2"
-  },
-  "devDependencies": {
-    "vite": "^4.3.0"
-  },
-  "engines": {
-    "node": ">=16"
-  }
+  "dependencies": {}
 }
