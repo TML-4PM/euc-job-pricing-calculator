@@ -1,25 +1,17 @@
-/euc-job-pricing-calculator
-├── assets/                     # Images, logos, icons
-│   ├── geeks2u-logo.png
-│   ├── officeworks-logo.png
-│   ├── rowboat.gif
-├── public/                     # Static frontend files
-│   ├── index.html
-│   ├── styles.css
-│   ├── script.js
-├── data/                        # JSON data for pricing
-│   ├── productList.json
-├── src/                        # Backend API (Express.js)
-│   ├── app.js
-│   ├── controllers/
-│   │   ├── pricingController.js
-│   ├── routes/
-│   │   ├── pricingRoutes.js
-│   ├── models/
-│   │   ├── pricingModel.js
-├── functions/                   # Netlify serverless functions
-│   ├── api.js
-├── netlify.toml                 # Netlify configuration
-├── package.json                 # Project dependencies
-├── LICENSE                      # Open-source license
-├── README.md                    # Documentation
+/project-root
+│── /public
+│    ├── index.html
+│    ├── styles.css
+│    ├── officeworks-logo.png
+│    ├── geeks2u-logo.png
+│── /src
+│    ├── main.js
+│    ├── calculator.js
+│    ├── email-handler.js
+│    ├── pdf-generator.js
+│── /data
+│    ├── products.json
+│    ├── sample-calendar.json
+│── package.json
+│── netlify.toml
+│── README.md
